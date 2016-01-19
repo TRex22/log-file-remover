@@ -1,0 +1,13 @@
+{
+    "timeZone": "Africa/Johannesburg", // if you need others, check the moment-timezone npm module
+    "logging": {
+        "file": {
+            "folder": "/logs",
+            "retention": {
+                "units": "days",
+                "amount": 7
+            }
+        },
+        "startTheJobAutomatically": false
+    }
+}
