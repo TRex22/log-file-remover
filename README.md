@@ -28,7 +28,8 @@ This tool requires the npm cron library: [https://www.npmjs.com/package/cron](ht
 	                "amount": 1
 	            }
 	        },
-	    	"startTheJobAutomatically": false
+	    	"startTheJobAutomatically": false,
+	    	"cronTime": "* * * * *"
 	    }
 	}
  '''

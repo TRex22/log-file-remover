@@ -8,6 +8,7 @@
                 "amount": 7
             }
         },
-        "startTheJobAutomatically": false
+        "startTheJobAutomatically": false,
+        "cronTime": "* * * * *"
     }
 }

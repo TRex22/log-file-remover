@@ -15,11 +15,12 @@ var config = {
         "file": {
             "folder": "/logs",
             "retention": {
-                "units": "minutes",
-                "amount": 1
+                "units": "days",
+                "amount": 7
             }
         },
-    	"startTheJobAutomatically": false   
+    	"startTheJobAutomatically": true,
+    	"cronTime": "* * * * * *"   
     }
 };
 
@@ -33,8 +34,8 @@ var config = {
 });*/
 
 generateFakeLogFiles('logs/fakeLogFile', 5);
-var job = winstonLogRemover.schedule(config);
-job.start();
+winstonLogRemover.schedule(config);
+//job.start();
 
 function generateFakeLogFiles(filePath, numberToGenerate){
 	for (var i = 0; i < numberToGenerate; i++){
