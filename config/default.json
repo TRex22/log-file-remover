@@ -1,5 +1,5 @@
 {
-    "timeZone": "Africa/Johannesburg", // if you need others, check the moment-timezone npm module
+    "timeZone": "Africa/Johannesburg",
     "logging": {
         "file": {
             "folder": "/logs",

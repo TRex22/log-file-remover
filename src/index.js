@@ -47,7 +47,7 @@ function configure(config){
     }
 
     fileRemovalThreshold = moment().subtract(retentionAmount, retentionUnits);
-    console.log('fileRemovalThreshold: '+fileRemovalThreshold);
+    console.log('File Removal Threshold: '+fileRemovalThreshold);
 }
 
 function onTick(jobDone) {
@@ -69,6 +69,7 @@ function onTick(jobDone) {
         else{
         	var fileDateTimeString = null;
         	var fileDateTime = null;
+
         	if(timeToTake === 'mtime'){
         		fileDateTimeString = fs.statSync(path.join(fileLogPath, file)).mtime.getTime(); //get the last modified date
         		fileDateTime = fileDateTimeString;
