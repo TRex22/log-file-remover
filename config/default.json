@@ -6,7 +6,8 @@
             "retention": {
                 "units": "days",
                 "amount": 7
-            }
+            },
+            "timeToTake": "mtime"
         },
         "startTheJobAutomatically": false,
         "cronTime": "* * * * *"

@@ -15,9 +15,10 @@ var config = {
         "file": {
             "folder": "/logs",
             "retention": {
-                "units": "days",
+                "units": "hours",
                 "amount": 7
-            }
+            },
+            "timeToTake": "mtime"
         },
     	"startTheJobAutomatically": true,
     	"cronTime": "* * * * * *"   
