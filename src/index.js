@@ -47,7 +47,7 @@ function configure(config){
     }
 
     fileRemovalThreshold = moment().subtract(retentionAmount, retentionUnits);
-    console.log('File Removal Threshold: '+fileRemovalThreshold);
+    console.log('File Removal Threshold: '+fileRemovalThreshold+'\ndate'+moment());
 }
 
 function onTick(jobDone) {
@@ -70,6 +70,7 @@ function onTick(jobDone) {
         	var fileDateTimeString = null;
         	var fileDateTime = null;
 
+        	var err = false;
         	if(timeToTake === 'mtime'){
         		fileDateTimeString = fs.statSync(path.join(fileLogPath, file)).mtime.getTime(); //get the last modified date
         		fileDateTime = fileDateTimeString;
@@ -84,25 +85,27 @@ function onTick(jobDone) {
         	}
         	else{
         		console.error('Incorrect timeToTake specified, please specifiy either mtime or ctime');
-        		return;
+        		err = true;
         	}
 
-	        console.error("fileDateTimeString: "+fileDateTimeString+"\nfileDateTime: "+fileDateTime);
-	        if (!fileDateTime || fileDateTime < 1) {
-	            console.warn('File (' + file + ') does not have a valid date, ignoring');
-	        }
-	        else{
-	        	if (fileDateTime < fileRemovalThreshold) {
-	            	console.info('File (' + file + ') is still valid');
+	        if(!err){
+	        	console.error("fileDateTimeString: "+fileDateTimeString+"\nfileDateTime: "+fileDateTime);
+		        if (!fileDateTime || fileDateTime < 1) {
+		            console.warn('File (' + file + ') does not have a valid date, ignoring');
 		        }
 		        else{
-		        	fs.unlink(path.join(fileLogPath, file), function (err) {
-			            if (err) {
-			                console.error('Error deleting old log file: ', err);
-			            }
-			            console.info("Successfully deleted log file: " + file);
-		        	});
-		        }	        
+		        	if (fileDateTime > fileRemovalThreshold) {
+		            	console.info('File (' + file + ') is still valid');
+			        }
+			        else{
+			        	fs.unlink(path.join(fileLogPath, file), function (err) {
+				            if (err) {
+				                console.error('Error deleting old log file: ', err);
+				            }
+				            console.info("Successfully deleted log file: " + file);
+			        	});
+			        }	        
+		        }
 	        }
         }
     }

@@ -1,5 +1,3 @@
-var should = require('chai').should();
-
 var fs = require('fs');
 var util = require('util');
 var fn = require('hactarjs');
@@ -10,7 +8,7 @@ var winstonLogRemover = require('../src/index.js');
 
 /*config*/
 var config = {
-	"timeZone": "Africa/Johannesburg", // if you need others, check the moment-timezone npm module
+	"timeZone": "Africa/Johannesburg",
 	"logging": {
         "file": {
             "folder": "/logs",
@@ -25,18 +23,8 @@ var config = {
     }
 };
 
-/*describe('', function() {
-  it('generate 5 fake logs and delete ones older than 5 minutes', function(){
-    generateFakeLogFiles('logs/fakeLogFile', 5);
-    winstonLogRemover.schedule(config);
-   //cc CronJob.start();
-  });
-
-});*/
-
-generateFakeLogFiles('logs/fakeLogFile', 5);
+generateFakeLogFiles('logs/fakeLogFile', 6);
 winstonLogRemover.schedule(config);
-//job.start();
 
 function generateFakeLogFiles(filePath, numberToGenerate){
 	for (var i = 0; i < numberToGenerate; i++){
