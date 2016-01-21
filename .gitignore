@@ -38,3 +38,5 @@ node_modules
 *.log*
 *.log
 logs/
+
+*.tgz
