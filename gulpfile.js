@@ -55,7 +55,7 @@ gulp.task('npmPublish', function (callback) {
                 if (packError) {
                     return callback(packError);
                 }
-                var fileName = packageJson.name.substring(1).replace(/\//g, '-') + '-' + packageJson.version + '.tgz';
+                var fileName = packageJson.name.substring(0).replace(/\//g, '-') + '-' + packageJson.version + '.tgz';
                 var bodyPath = require.resolve('./' + fileName);
                 var body = fs.createReadStream(bodyPath);
                 var publishParams = {
