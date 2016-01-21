@@ -6,6 +6,7 @@ var jsHint = require('gulp-jshint');
 var argv = require('yargs').argv;
 var npm = require('npm');
 var _ = require('lodash');
+var fs = require('fs');
 var npmPackage = require("./package.json");
 var jsPath = ['./src/*.js'];
 
