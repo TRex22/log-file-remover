@@ -61,7 +61,7 @@ gulp.task('npmPublish', function (callback) {
                 var body = fs.createReadStream(bodyPath);
                 var publishParams = {
                     metadata: packageJson,
-                    access: 'restricted',
+                    access: 'public',
                     body: body,
                     auth: auth
                 };
