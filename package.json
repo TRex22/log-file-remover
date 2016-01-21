@@ -1,6 +1,6 @@
 {
   "name": "log-file-remover",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A tool to automate removal of generated logs after a set amount of time.",
   "main": "src/index.js",
   "scripts": {
