@@ -29,8 +29,14 @@
     "async": "1.5.2",
     "config": "1.19.0",
     "cron": "1.1.0",
+    "gulp": "3.9.0",
+    "gulp-jshint": "^.0.0",
     "hactarjs": "0.0.1",
-    "moment": "2.11.1"
+    "jshint": "2.9.1",
+    "moment": "2.11.1",
+    "npm": "3.5.3",
+    "util": "0.10.3",
+    "yargs": "3.32.0"
   },
   "devDependencies": {
     "util": "^0.10.3"
