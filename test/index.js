@@ -23,6 +23,7 @@ var config = {
     }
 };
 
+//run every second!!!
 generateFakeLogFiles('logs/fakeLogFile', 6);
 winstonLogRemover.schedule(config);
 

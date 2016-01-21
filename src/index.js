@@ -27,12 +27,13 @@ function schedule(config, callback) {
     configure(config);
     var job = new CronJob(cronTime, onTick, onComplete, startTheJobAutomatically, timezone);
     console.log('Scheduled the remove old logs job');
+    callback = {job:job};
 }
 
 function configure(config){
     if(config){
         fileLogPath = appRootPath.resolve(config.logging.file.folder);
-        retentionAmount = config.logging.file.retention.units;
+        retentionAmount = config.logging.file.retention.amount;
         retentionUnits = config.logging.file.retention.units;
         timezone = config.timeZone;
         cronTime = config.logging.cronTime;
@@ -46,7 +47,8 @@ function configure(config){
         console.log('cron job will not start automatically. Use job.start() to start the job');
     }
 
-    fileRemovalThreshold = moment().subtract(retentionAmount, retentionUnits);
+    var today = moment.utc();
+    fileRemovalThreshold = moment(today).subtract(retentionAmount, retentionUnits);
     console.log('File Removal Threshold: '+fileRemovalThreshold+'\ndate'+moment());
 }
 
@@ -62,7 +64,7 @@ function onTick(jobDone) {
         }
     });
 
-    function checkIfFileNeedsToBeRemoved(file, done) {
+    function checkIfFileNeedsToBeRemoved(file) {
         if (file === '.gitignore') {
             console.warn("This is the .gitignore file, won't delete");
         }
@@ -89,7 +91,6 @@ function onTick(jobDone) {
         	}
 
 	        if(!err){
-	        	console.error("fileDateTimeString: "+fileDateTimeString+"\nfileDateTime: "+fileDateTime);
 		        if (!fileDateTime || fileDateTime < 1) {
 		            console.warn('File (' + file + ') does not have a valid date, ignoring');
 		        }

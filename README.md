@@ -35,7 +35,7 @@ The library will accept a custom config object being passed into the schedule fu
 }
 ```
 
-If startTheJobAutomatically is set to false, remember to call job.start(), assuming job is the variable you set the cron job to.
+If startTheJobAutomatically is set to false, remember to call job.start(), assuming job is the variable you set the cron job to. Unfortunately, for now this is hard coded to true.
 
 For the timeZone if you need others, check the moment-timezone npm module
 
