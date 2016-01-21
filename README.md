@@ -9,7 +9,7 @@ A tool to automate removal of generated logs after a set amount of time.
   - entry point is index.js
 
   ```javascript
-  var logRemover = require('winston-log-remover');
+  var logRemover = require('log-file-remover');
   logRemover.schedule(config);
   ```
 
