@@ -2,13 +2,14 @@
 'use strict';
 var util = require("util");
 var gulp = require("gulp");
-var jshint = require('gulp-jshint');
+var jsHint = require('gulp-jshint');
 var argv = require('yargs').argv;
 var npm = require('npm');
 var npmPackage = require("./package.json");
+var jsPath = ['./src/*.js'];
 
 gulp.task('lint', function () {
-    return gulp.src(config.appFiles.js)
+    return gulp.src(jsPath)
         .pipe(jsHint())
         .pipe(jsHint.reporter('default'))
         .pipe(jsHint.reporter('fail'));
