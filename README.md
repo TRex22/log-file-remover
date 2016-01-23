@@ -41,4 +41,7 @@ For the timeZone if you need others, check the moment-timezone npm module
 
 timeToTake is the time which will be looked at when deleting logs.	
 timeToTake is either mtime, ctime or fileName. The modified time, the created time or a date specified in the file name.
-The filename looked at follows this expression: `log-file-name.2016-01-13T14` 
+The filename looked at follows this expression: `log-file-name.YYYY-MM-DDTHH` 
+
+Example:
+`crash-log.2016-01-13T14`
