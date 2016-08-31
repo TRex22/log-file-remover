@@ -45,3 +45,16 @@ The filename looked at follows this expression: `log-file-name.YYYY-MM-DDTHH`
 
 Example:
 `crash-log.2016-01-13T14`
+
+cronTime uses standard cron input. This allows for more explicit control of the timed settings of the cron Job
+
+##Some Examples of Cron Times:
+
+```javascript
+    everySecond: '* * * * * *',
+    everyMinute: '* * * * *',
+    everyHour: '00 00 * * * *',
+    every10Seconds: '*/6 * * * * *',
+    midnight: '00 00 00 * *',
+    everyDayAtTwoFifteen: '00 15 02 * * *'
+```

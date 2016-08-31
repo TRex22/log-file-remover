@@ -1,6 +1,6 @@
 {
   "name": "log-file-remover",
-  "version": "0.1.12",
+  "version": "0.1.19",
   "description": "A tool to automate removal of generated logs after a set amount of time.",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Encentivize/winston-log-remover.git"
+    "url": "git+https://github.com/Encentivize/log-file-remover.git"
   },
   "keywords": [
     "winston",
@@ -21,9 +21,9 @@
   "author": "TRex22 <contact@jasonchalom.com> (http://jasonchalom.com/blog)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Encentivize/winston-log-remover/issues"
+    "url": "https://github.com/Encentivize/log-file-remover/issues"
   },
-  "homepage": "https://github.com/Encentivize/winston-log-remover#readme",
+  "homepage": "https://github.com/Encentivize/log-file-remover#readme",
   "dependencies": {
     "app-root-path": "1.0.0",
     "config": "1.19.0",
@@ -32,7 +32,7 @@
     "gulp-jshint": "2.0.0",
     "hactarjs": "0.0.1",
     "jshint": "2.9.1",
-    "moment": "2.11.1"    
+    "moment": "2.11.1"
   },
   "devDependencies": {
     "util": "0.10.3"
